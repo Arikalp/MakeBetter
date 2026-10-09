@@ -72,6 +72,20 @@ export default function Footer({ onNavigateSection }) {
             </a>
           </div>
         </div>
+
+        {/* Developer Credit */}
+        <div style={{
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          marginTop: '12px',
+          paddingTop: '14px',
+          textAlign: 'center',
+          fontSize: '12px',
+          color: 'var(--mb-text-dim)',
+          letterSpacing: '0.03em'
+        }}>
+          Developed by{' '}
+          <span style={{ color: 'var(--mb-accent, #00e5ff)', fontWeight: 600 }}>Arikalp</span>
+        </div>
       </div>
     </footer>
   )
