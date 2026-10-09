@@ -7,7 +7,7 @@ import { FaCreativeCommonsSamplingPlus } from "react-icons/fa";
  * notification indicator, and mobile menu trigger.
  * Includes a scroll-responsive floating pill animation after 40px.
  */
-export default function Navbar({ onOpenReportModal, onNavigateSection, onOpenUserManagement }) {
+export default function Navbar({ onOpenReportModal, onOpenReportIssue, onNavigateSection, onOpenUserManagement }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('explore-map')
   const [isScrolled, setIsScrolled] = useState(false)
@@ -30,6 +30,7 @@ export default function Navbar({ onOpenReportModal, onNavigateSection, onOpenUse
   const navItems = [
     { id: 'explore-map', label: 'Explore Map', sectionId: 'geospatial-radar' },
     { id: 'public-feed', label: 'Public Feed', sectionId: 'public-feed' },
+    { id: 'report-issue', label: 'Report Issue', action: onOpenReportIssue || onOpenReportModal },
     { id: 'how-it-works', label: 'How It Works', sectionId: 'how-it-works' },
     { id: 'capabilities', label: 'Capabilities', sectionId: 'capabilities' },
     { id: 'admin-portal', label: 'User Admin', action: onOpenUserManagement }
@@ -75,7 +76,7 @@ export default function Navbar({ onOpenReportModal, onNavigateSection, onOpenUse
           <button
             type="button"
             className="mb-btn-primary"
-            onClick={onOpenReportModal}
+            onClick={onOpenReportIssue || onOpenReportModal}
           >
             <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>add</span>
             <span>Report Issue</span>

@@ -1,16 +1,30 @@
 import { useState } from 'react'
 import LandingPage from './components/landing/LandingPage'
+import ReportIssuePage from './components/report/ReportIssuePage'
 import DataEntry from './components/DataEntry'
 import './App.css'
 
 /**
  * Root Application Component
- * Renders the primary MakeBetter Landing Page with seamless access
- * to the User Management dashboard.
+ * Coordinates primary views:
+ * - 'landing': MakeBetter Landing Page with live telemetry radar
+ * - 'report-issue': Multi-Step Civic Issue Wizard with AI Triage & Geotagging
+ * - 'data-entry': Database Administration & User Management console
  */
 function App() {
   const [currentView, setCurrentView] = useState('landing')
 
+  // 1. Report Issue Multi-Step Wizard View
+  if (currentView === 'report-issue') {
+    return (
+      <ReportIssuePage
+        onBackToLanding={() => setCurrentView('landing')}
+        onOpenUserManagement={() => setCurrentView('data-entry')}
+      />
+    )
+  }
+
+  // 2. Database Administration View
   if (currentView === 'data-entry') {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
@@ -58,7 +72,13 @@ function App() {
     )
   }
 
-  return <LandingPage onOpenUserManagement={() => setCurrentView('data-entry')} />
+  // 3. Default Landing Page View
+  return (
+    <LandingPage
+      onOpenReportIssue={() => setCurrentView('report-issue')}
+      onOpenUserManagement={() => setCurrentView('data-entry')}
+    />
+  )
 }
 
 export default App

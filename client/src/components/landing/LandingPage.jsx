@@ -17,7 +17,7 @@ import './LandingPage.css'
  * - Component-based separation of concerns
  * - Sleek, modern dark-mode aesthetics with live interactions
  */
-export default function LandingPage({ onOpenUserManagement }) {
+export default function LandingPage({ onOpenReportIssue, onOpenUserManagement }) {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false)
 
   // Smooth scroll helper to section
@@ -33,11 +33,14 @@ export default function LandingPage({ onOpenUserManagement }) {
     handleNavigateSection('geospatial-radar')
   }
 
+  const handleTriggerReport = onOpenReportIssue || (() => setIsReportModalOpen(true))
+
   return (
     <div className="landing-wrapper">
-      {/* 1. Sticky Navigation Bar */}
+      {/* 1. Sticky / Floating Navigation Bar */}
       <Navbar
         onOpenReportModal={() => setIsReportModalOpen(true)}
+        onOpenReportIssue={onOpenReportIssue}
         onNavigateSection={handleNavigateSection}
         onOpenUserManagement={onOpenUserManagement}
       />
@@ -46,7 +49,7 @@ export default function LandingPage({ onOpenUserManagement }) {
       <main className="landing-main">
         {/* 2. Hero Section with Live Telemetry & Floating Incident Card */}
         <HeroSection
-          onOpenReportModal={() => setIsReportModalOpen(true)}
+          onOpenReportModal={handleTriggerReport}
           onExploreMap={handleExploreMap}
         />
 
@@ -64,7 +67,7 @@ export default function LandingPage({ onOpenUserManagement }) {
 
         {/* 7. Final Call to Action Impact Banner */}
         <CtaBanner
-          onOpenReportModal={() => setIsReportModalOpen(true)}
+          onOpenReportModal={handleTriggerReport}
           onExploreMap={handleExploreMap}
         />
       </main>
