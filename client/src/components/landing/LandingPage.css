@@ -94,19 +94,49 @@
 }
 
 /* ==========================================================================
-   1. NAVBAR
+   1. NAVBAR (Scroll-Responsive Floating Pill)
    ========================================================================== */
 .mb-navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
   height: 68px;
   z-index: 100;
-  background: rgba(12, 14, 21, 0.82);
+  border-radius: 0;
+  background: rgba(12, 14, 21, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  border: 1px solid transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+
+  /* Smooth 400-500ms transition between full-width & floating pill */
+  transition:
+    width 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    max-width 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    top 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 450ms ease,
+    border-color 450ms ease;
+}
+
+/* Floating Pill State (scrolled down past 40px) */
+.mb-navbar.floating {
+  top: 16px;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 9999px;
+  background: rgba(12, 14, 21, 0.76);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 16px 40px -8px rgba(0, 0, 0, 0.75),
+    0 0 24px rgba(160, 120, 255, 0.12);
 }
 
 .mb-navbar-inner {
@@ -115,6 +145,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  transition: padding 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mb-navbar.floating .mb-navbar-inner {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .mb-brand {
@@ -284,12 +320,30 @@
 
 /* Mobile dropdown menu */
 .mb-mobile-menu {
-  background: var(--mb-surface-lowest);
-  border-bottom: 1px solid var(--mb-outline);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: rgba(12, 14, 21, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--mb-radius-lg);
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .mb-navbar.floating {
+    width: 94%;
+    top: 10px;
+    border-radius: 28px;
+    height: 62px;
+  }
 }
 
 /* ==========================================================================

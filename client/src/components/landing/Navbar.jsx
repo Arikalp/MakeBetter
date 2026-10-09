@@ -1,14 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FaCreativeCommonsSamplingPlus } from "react-icons/fa";
 
 /**
  * Top Navigation Bar Component
  * Displays brand logo, navigation links, issue reporting button,
  * notification indicator, and mobile menu trigger.
+ * Includes a scroll-responsive floating pill animation after 40px.
  */
 export default function Navbar({ onOpenReportModal, onNavigateSection, onOpenUserManagement }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('explore-map')
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Track window scroll position to trigger floating pill animation
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initialize state on mount
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     { id: 'explore-map', label: 'Explore Map', sectionId: 'geospatial-radar' },
@@ -29,10 +46,10 @@ export default function Navbar({ onOpenReportModal, onNavigateSection, onOpenUse
   }
 
   return (
-    <header className="mb-navbar">
+    <header className={`mb-navbar ${isScrolled ? 'floating' : ''}`}>
       <div className="mb-container mb-navbar-inner">
         {/* Brand Logo & Title */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1vw' }}>
           <a href="#" className="mb-brand" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <FaCreativeCommonsSamplingPlus size={22} />
             <span>MakeBetter</span>
