@@ -1,17 +1,14 @@
 import { useState } from 'react'
+import { AuthProvider } from './context/AuthContext'
 import LandingPage from './components/landing/LandingPage'
 import ReportIssuePage from './components/report/ReportIssuePage'
 import DataEntry from './components/DataEntry'
 import './App.css'
 
 /**
- * Root Application Component
- * Coordinates primary views:
- * - 'landing': MakeBetter Landing Page with live telemetry radar
- * - 'report-issue': Multi-Step Civic Issue Wizard with AI Triage & Geotagging
- * - 'data-entry': Database Administration & User Management console
+ * Main application content with current view switcher
  */
-function App() {
+function MainApp() {
   const [currentView, setCurrentView] = useState('landing')
 
   // 1. Report Issue Multi-Step Wizard View
@@ -81,4 +78,13 @@ function App() {
   )
 }
 
-export default App
+/**
+ * Root Application Component wrapped in AuthProvider
+ */
+export default function App() {
+  return (
+    <AuthProvider>
+      <MainApp />
+    </AuthProvider>
+  )
+}

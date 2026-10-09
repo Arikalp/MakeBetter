@@ -8,17 +8,21 @@ import PublicFeedSection from './PublicFeedSection'
 import CtaBanner from './CtaBanner'
 import Footer from './Footer'
 import ReportIssueModal from './ReportIssueModal'
+import AuthModal from '../auth/AuthModal'
+import { useAuth } from '../../context/AuthContext'
 import './LandingPage.css'
 
 /**
  * Main Landing Page Component for MakeBetter Civic Infrastructure Platform
- * Clean, modular component architecture adhering strictly to NOTE.md principles:
- * - Highly readable, self-documenting code
- * - Component-based separation of concerns
- * - Sleek, modern dark-mode aesthetics with live interactions
+ * Integrates authentication triggers, conditional navbar options,
+ * and automatic transition to the Report Issue page upon successful login.
  */
 export default function LandingPage({ onOpenReportIssue, onOpenUserManagement }) {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false)
+  const [authModalOpen, setAuthModalOpen] = useState(false)
+  const [authModalMode, setAuthModalMode] = useState('login')
+
+  const { isAuthenticated } = useAuth()
 
   // Smooth scroll helper to section
   const handleNavigateSection = (sectionId) => {
@@ -33,16 +37,40 @@ export default function LandingPage({ onOpenReportIssue, onOpenUserManagement })
     handleNavigateSection('geospatial-radar')
   }
 
-  const handleTriggerReport = onOpenReportIssue || (() => setIsReportModalOpen(true))
+  // Open Auth Modal
+  const handleOpenAuth = (mode = 'login') => {
+    setAuthModalMode(mode)
+    setAuthModalOpen(true)
+  }
+
+  // When user clicks "Report Issue" anywhere on the landing page:
+  // - If authenticated: push directly to report issue page
+  // - If not logged in: open Auth Modal, and push to report page right after login!
+  const handleTriggerReport = () => {
+    if (isAuthenticated) {
+      if (onOpenReportIssue) onOpenReportIssue()
+    } else {
+      handleOpenAuth('signup')
+    }
+  }
+
+  // On successful login or signup, push user to report issue page
+  const handleAuthSuccess = (user) => {
+    setAuthModalOpen(false)
+    if (onOpenReportIssue) {
+      onOpenReportIssue(user)
+    }
+  }
 
   return (
     <div className="landing-wrapper">
       {/* 1. Sticky / Floating Navigation Bar */}
       <Navbar
-        onOpenReportModal={() => setIsReportModalOpen(true)}
-        onOpenReportIssue={onOpenReportIssue}
+        onOpenReportModal={handleTriggerReport}
+        onOpenReportIssue={handleTriggerReport}
         onNavigateSection={handleNavigateSection}
         onOpenUserManagement={onOpenUserManagement}
+        onOpenAuth={handleOpenAuth}
       />
 
       {/* Main Landing Sections */}
@@ -75,13 +103,21 @@ export default function LandingPage({ onOpenReportIssue, onOpenUserManagement })
       {/* 8. Municipal Footer & Legal Information */}
       <Footer onNavigateSection={handleNavigateSection} />
 
-      {/* 9. Interactive Report Civic Incident Modal */}
+      {/* 9. Interactive Report Civic Incident Quick Modal */}
       <ReportIssueModal
         isOpen={isReportModalOpen}
         onClose={() => setIsReportModalOpen(false)}
         onSubmitted={(report) => {
           console.log('New civic report registered:', report)
         }}
+      />
+
+      {/* 10. Authentication Modal (Login & Signup) */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        initialMode={authModalMode}
+        onAuthSuccess={handleAuthSuccess}
       />
     </div>
   )
