@@ -17,7 +17,7 @@ import './LandingPage.css'
  * Integrates authentication triggers, conditional navbar options,
  * and automatic transition to the Report Issue page upon successful login.
  */
-export default function LandingPage({ onOpenReportIssue, onOpenUserManagement }) {
+export default function LandingPage({ onOpenReportIssue, onOpenUserManagement, onLogout }) {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false)
   const [authModalOpen, setAuthModalOpen] = useState(false)
   const [authModalMode, setAuthModalMode] = useState('login')
@@ -71,6 +71,7 @@ export default function LandingPage({ onOpenReportIssue, onOpenUserManagement })
         onNavigateSection={handleNavigateSection}
         onOpenUserManagement={onOpenUserManagement}
         onOpenAuth={handleOpenAuth}
+        onLogout={onLogout}
       />
 
       {/* Main Landing Sections */}

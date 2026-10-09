@@ -74,6 +74,7 @@ function MainApp() {
     <LandingPage
       onOpenReportIssue={() => setCurrentView('report-issue')}
       onOpenUserManagement={() => setCurrentView('data-entry')}
+      onLogout={() => setCurrentView('landing')}
     />
   )
 }

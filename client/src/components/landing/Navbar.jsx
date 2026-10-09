@@ -13,7 +13,8 @@ export default function Navbar({
   onOpenReportIssue,
   onNavigateSection,
   onOpenUserManagement,
-  onOpenAuth
+  onOpenAuth,
+  onLogout
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [userDropdownOpen, setUserDropdownOpen] = useState(false)
@@ -60,7 +61,9 @@ export default function Navbar({
     logout()
     setUserDropdownOpen(false)
     setMobileMenuOpen(false)
-    if (onNavigateSection) {
+    if (onLogout) {
+      onLogout()
+    } else {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }

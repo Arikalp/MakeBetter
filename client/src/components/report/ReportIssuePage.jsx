@@ -87,6 +87,7 @@ export default function ReportIssuePage({ onBackToLanding, onOpenUserManagement 
         onOpenReportModal={() => {}}
         onNavigateSection={() => onBackToLanding && onBackToLanding()}
         onOpenUserManagement={onOpenUserManagement}
+        onLogout={() => onBackToLanding && onBackToLanding()}
       />
 
       {/* 2. Main Wizard Page Body */}
