@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#e2e2ec","on-tertiary-container":"#003120","tertiary-fixed":"#68fcbf","primary-container":"#a078ff","secondary-container":"#00cbe6","on-primary-container":"#340080","on-tertiary-fixed-variant":"#005137","primary-fixed-dim":"#d0bcff","on-tertiary":"#003825","on-error-container":"#ffdad6","surface-tint":"#d0bcff","on-secondary-fixed":"#001f25","secondary-fixed":"#a2eeff","surface-dim":"#11131a","tertiary":"#45dfa4","tertiary-container":"#00a574","secondary":"#5de6ff","on-secondary-fixed-variant":"#004e5a","surface-container-highest":"#33343d","secondary-fixed-dim":"#2fd9f4","outline":"#958ea0","outline-variant":"#494454","on-tertiary-fixed":"#002114","surface":"#11131a","on-secondary":"#00363e","inverse-primary":"#6d3bd7","on-surface":"#e2e2ec","primary-fixed":"#e9ddff","surface-variant":"#33343d","on-primary":"#3c0091","on-secondary-container":"#00515d","error-container":"#93000a","inverse-on-surface":"#2e3038","primary":"#d0bcff","surface-container-low":"#191b23","on-error":"#690005","error":"#ffb4ab","on-surface-variant":"#cbc3d7","tertiary-fixed-dim":"#45dfa4","surface-container-lowest":"#0c0e15","on-primary-fixed":"#23005c","on-primary-fixed-variant":"#5516be","surface-container":"#1d1f27","inverse-surface":"#e2e2ec","background":"#11131a","surface-container-high":"#282a31","surface-bright":"#373941"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"margin-mobile":"1rem","gutter-desktop":"1.5rem","margin":"1.5rem","space-sm":"0.5rem","margin-desktop":"2rem","space-xl":"2rem","space-md":"1rem","gutter":"1.25rem","gutter-mobile":"0.75rem","space-lg":"1.5rem","space-xs":"0.25rem"},fontFamily:{"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"],"code-sm":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"headline-xl":["Inter"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"code-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.025em",fontWeight:"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/90 backdrop-blur-xl z-50 flex flex-col pt-space-lg pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="MakeBetter Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UD54QEo-yUSaHtZuTJZKExhGfPNeJRCpKv8ksRtmrDW-V1QrCyQBrHkeZWOExWd5_d0F6w-MDIMdG4bDZ2_0rnogqARS9vIhDwRuGsKOQZOx3ZWljgpKyRXEuEMSpz3tR2yQBOGAxgVF8ITiIW8TTEc7yCZy437cmTtCk790kq9ObhNrUBaU7DjdGEcrY6iI28ZtklTgFZKAwNaS6pcb4Zc_MhiZafV_DDGuZjhKqVK80k8Ehiw5JcSqw"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-tight">MakeBetter</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Admin Core</span></div></div><div class="px-space-md mb-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operations Center</div><nav class="flex-1 px-space-md flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-xl shadow-[0_0_20px_rgba(160,120,255,0.25)]"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-label-md rounded-xl shadow-[0_0_20px_rgba(160,120,255,0.25)]" data-path="admin-portal" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Dashboard Overview</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="admin-triage" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span>AI Triage & SLAs</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="admin-dispatch" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span>Crews & Dispatch</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="explore-map" href="#"><span class="material-symbols-outlined text-[20px]">map</span>GIS Command View</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="public-feed" href="#"><span class="material-symbols-outlined text-[20px]">dynamic_feed</span>Public Telemetry</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="citizen-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">person</span>Citizen View</a></nav><div class="px-space-md pt-space-md mt-auto flex flex-col gap-space-xs"><div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Telemetry Live</span><span class="font-code-sm text-code-sm text-on-surface-variant">Grid Latency: 14ms</span></div><span class="material-symbols-outlined text-tertiary text-[18px]">wifi_tethering</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-sm"><div class="relative hidden sm:block w-72"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-9 pr-space-md py-1.5 rounded-xl bg-surface-container-high font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search incidents, geo-tags, IDs..." type="text"/></div></div><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary-container px-space-md py-space-sm rounded-xl font-label-md text-label-md transition-all" data-path="report-issue" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>New Incident</span></a><button aria-label="Notifications" class="relative p-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest animate-pulse"></span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKPipQ8OWuXk2X59ADZiLAIt5_ktvqQAVQNgOFoamHltBuy4oSPTIX13UhCX6-Jtb2jUjpwBcsW8OaWTvBMoKZbV-Ito4WryVz0BbVS4PRjoHH5KueBZuO5lg1ebq2yoXrh4CaVYxYTDhqfq0WZrmLTNb5dvr6e8bKKRVsmF7fSXmmkY4ThBP_WNjxTDAE7jDPq_R2pARLavrBHD03G9p9TTZdLscdGFxAmeKNyXWgHXexesXchtv"/></div></div></header><main class="relative pt-16 w-full min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Command Center Spatial Canvas -->
+<div class="p-margin-desktop flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full">
+<!-- Top Strategic Operations Command Bar -->
+<div class="relative overflow-hidden bg-surface-container/70 backdrop-blur-2xl rounded-2xl p-space-md shadow-xl flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Glow ambient backdrops -->
+<div class="absolute -left-20 -top-20 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Left: Contextual Query & Department Selector -->
+<div class="flex flex-wrap items-center gap-space-sm relative z-10">
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1.5 rounded-xl">
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Dept:</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer pr-space-xs" id="deptSelector">
+<option class="bg-surface-container-highest text-on-surface" value="all">Integrated Metro (All Divisions)</option>
+<option class="bg-surface-container-highest text-on-surface" selected="" value="pw">Public Works & Infrastructure</option>
+<option class="bg-surface-container-highest text-on-surface" value="transit">DOT Transit & Mobility</option>
+<option class="bg-surface-container-highest text-on-surface" value="water">Municipal Water & Drainage</option>
+<option class="bg-surface-container-highest text-on-surface" value="grid">City Power & Electrical Grid</option>
+</select>
+</div>
+<div class="relative flex-1 sm:w-80">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">travel_explore</span>
+<input class="w-full bg-surface-container-high text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-2 rounded-xl focus:outline-none focus:bg-surface-bright transition-all" id="filterInput" placeholder="Filter by ID (MB-####), Ward 4, or Market St..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-2 rounded-xl text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-tertiary">calendar_today</span>
+<span>Last 14 Days</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Right: Direct High-Priority Operations -->
+<div class="flex items-center gap-space-sm relative z-10">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-error-container/20 text-error hover:bg-error-container/40 transition-all font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-error animate-pulse">campaign</span>
+<span>Emergency Broadcast</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-highest text-on-surface hover:bg-surface-bright transition-all font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Report</span>
+</button>
+</div>
+</div>
+<!-- 4 High-Impact KPI Telemetry Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<!-- KPI 1 -->
+<div class="relative overflow-hidden bg-surface-container/60 backdrop-blur-xl p-space-lg rounded-2xl shadow-xl flex flex-col justify-between group hover:-translate-y-0.5 transition-transform">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Total Reports Logged</span>
+<div class="w-8 h-8 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">dynamic_feed</span>
+</div>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">1,284</span>
+<span class="inline-flex items-center font-label-sm text-label-sm text-tertiary font-semibold gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12%
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span>7-Day Delta: +142 items</span>
+<span class="text-primary font-medium">99.1% intake online</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="relative overflow-hidden bg-surface-container/60 backdrop-blur-xl p-space-lg rounded-2xl shadow-xl flex flex-col justify-between group hover:-translate-y-0.5 transition-transform">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-error/15 rounded-full blur-xl group-hover:bg-error/25 transition-all"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Unresolved Triage Queue</span>
+<div class="w-8 h-8 rounded-xl bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">emergency</span>
+</div>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">43</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/40 text-error font-label-sm text-label-sm font-semibold animate-pulse">
+            8 High Priority
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span>Median backlog wait: 42m</span>
+<span class="text-error font-medium">SLA Alert Level 2</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="relative overflow-hidden bg-surface-container/60 backdrop-blur-xl p-space-lg rounded-2xl shadow-xl flex flex-col justify-between group hover:-translate-y-0.5 transition-transform">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-secondary/15 rounded-full blur-xl group-hover:bg-secondary/25 transition-all"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Active Work Orders</span>
+<div class="w-8 h-8 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+</div>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">67</span>
+<span class="font-label-md text-label-md text-secondary font-medium">9 Crews En Route</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span>Units engaged: 24 vehicles</span>
+<span class="text-secondary font-medium">Field sync: live</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="relative overflow-hidden bg-surface-container/60 backdrop-blur-xl p-space-lg rounded-2xl shadow-xl flex flex-col justify-between group hover:-translate-y-0.5 transition-transform">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-tertiary/15 rounded-full blur-xl group-hover:bg-tertiary/25 transition-all"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">30-Day Resolution Rate</span>
+<div class="w-8 h-8 rounded-xl bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">94.2%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">timer</span> 2.8d SLA
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span>Target compliance: >90%</span>
+<span class="text-tertiary font-medium">+1.4% MoM</span>
+</div>
+</div>
+</div>
+<!-- Operational Analytics Visual Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
+<!-- Incident Breakdown Widget (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container/60 backdrop-blur-xl p-space-lg rounded-2xl shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Incident Breakdown</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Autonomous AI categorization distribution</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-secondary font-code-sm text-code-sm">AI Engine v4.2</span>
+</div>
+<!-- Inline Visual Multi-tier Bars & Legend -->
+<div class="flex flex-col gap-space-md my-auto">
+<!-- Stacked Bar Representation -->
+<div class="w-full h-3.5 bg-surface-container-highest rounded-full overflow-hidden flex shadow-inner">
+<div class="h-full bg-primary-container" style="width: 44%;" title="Roadways: 44%"></div>
+<div class="h-full bg-secondary" style="width: 22%;" title="Electrical: 22%"></div>
+<div class="h-full bg-tertiary" style="width: 18%;" title="Drainage: 18%"></div>
+<div class="h-full bg-on-secondary-container" style="width: 11%;" title="Waste: 11%"></div>
+<div class="h-full bg-surface-bright" style="width: 5%;" title="Others: 5%"></div>
+</div>
+<!-- Category Percent Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Roadways</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">44% <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(565)</span></span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Electrical</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">22% <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(282)</span></span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Drainage</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">18% <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(231)</span></span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-on-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Waste/Sanit.</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">11% <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(141)</span></span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-bright"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Others/Parks</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">5% <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(65)</span></span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high/40 flex flex-col justify-center">
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Auto-verified</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-tertiary font-semibold">91.8%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 14-Day Influx vs Resolution Trend (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container/60 backdrop-blur-xl p-space-lg rounded-2xl shadow-xl flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-sm">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Operational Velocity: Intake vs Resolved</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">14-day rolling telemetry showing real-time municipal throughput</p>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="w-3 h-1 bg-secondary rounded-full"></span> New Influx
+            </span>
+<span class="flex items-center gap-1.5 text-primary">
+<span class="w-3 h-1 bg-primary rounded-full"></span> Resolved Orders
+            </span>
+</div>
+</div>
+<!-- Inline High Precision SVG Chart -->
+<div class="w-full relative h-48 my-auto">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 650 180">
+<defs>
+<lineargradient id="influxGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#5de6ff" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#5de6ff" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="resolveGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#d0bcff" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#d0bcff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#33343d" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="650" y1="30" y2="30"></line>
+<line stroke="#33343d" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="650" y1="80" y2="80"></line>
+<line stroke="#33343d" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="650" y1="130" y2="130"></line>
+<!-- Influx Area & Line -->
+<path d="M0,130 C50,110 100,140 150,90 C200,40 250,95 300,75 C350,55 400,30 450,45 C500,60 550,110 600,65 L650,50 L650,170 L0,170 Z" fill="url(#influxGlow)"></path>
+<path d="M0,130 C50,110 100,140 150,90 C200,40 250,95 300,75 C350,55 400,30 450,45 C500,60 550,110 600,65 L650,50" fill="none" stroke="#5de6ff" stroke-width="2.5"></path>
+<!-- Resolved Area & Line -->
+<path d="M0,145 C50,135 100,120 150,115 C200,80 250,70 300,60 C350,70 400,50 450,40 C500,35 550,55 600,40 L650,32 L650,170 L0,170 Z" fill="url(#resolveGlow)"></path>
+<path d="M0,145 C50,135 100,120 150,115 C200,80 250,70 300,60 C350,70 400,50 450,40 C500,35 550,55 600,40 L650,32" fill="none" stroke="#d0bcff" stroke-width="2.5"></path>
+<!-- Active Point Intersections -->
+<circle class="animate-pulse" cx="450" cy="45" fill="#5de6ff" r="4.5"></circle>
+<circle cx="650" cy="32" fill="#d0bcff" r="5"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-code-sm text-code-sm border-t-0 pt-space-xs">
+<span>Day -14 (Nov 02)</span>
+<span>Day -7 (Midpoint Peak)</span>
+<span>Today (Net Cleared +18)</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Layout: Incident Triage Grid + Inspector Dossier Drawer -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Central Incident Triage & Dispatch Table (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Batch Action Toolbar -->
+<div class="bg-surface-container/60 backdrop-blur-xl px-space-md py-space-sm rounded-2xl flex flex-wrap items-center justify-between gap-space-sm shadow-md">
+<div class="flex items-center gap-space-sm">
+<label class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md cursor-pointer select-none">
+<input class="w-4 h-4 rounded bg-surface-container-high checked:bg-primary accent-primary cursor-pointer" id="selectAllCheckbox" type="checkbox"/>
+<span>Select All (3 visible)</span>
+</label>
+<span class="text-outline-variant font-body-sm text-body-sm">|</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">3 Ready for Triage</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-xl bg-surface-container-highest hover:bg-surface-bright text-on-surface text-label-sm font-label-sm flex items-center gap-1 transition-all" onclick="alert('Bulk assigning work orders to active district crews')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">group_add</span>
+<span>Bulk Assign Crew</span>
+</button>
+<button class="px-space-md py-1.5 rounded-xl bg-surface-container-highest hover:bg-surface-bright text-on-surface text-label-sm font-label-sm flex items-center gap-1 transition-all" onclick="alert('Batch AI validation approved for selected items')" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">task_alt</span>
+<span>Verify Selected AI Tags</span>
+</button>
+<button class="px-space-md py-1.5 rounded-xl bg-error-container/20 hover:bg-error-container/30 text-error text-label-sm font-label-sm flex items-center gap-1 transition-all" onclick="alert('Priority elevated to Municipal Critical SLA')" type="button">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>Escalate</span>
+</button>
+</div>
+</div>
+<!-- Triage Data Table Container -->
+<div class="bg-surface-container/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-high/60 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md w-12 text-center">Sel</th>
+<th class="py-space-sm px-space-sm">Incident & Location</th>
+<th class="py-space-sm px-space-sm">AI Classification</th>
+<th class="py-space-sm px-space-sm">Severity</th>
+<th class="py-space-sm px-space-sm">Status</th>
+<th class="py-space-sm px-space-sm">Assigned Crew</th>
+<th class="py-space-sm px-space-sm">SLA Timer</th>
+<th class="py-space-sm px-space-md text-right">Dossier</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm" id="incidentTableBody">
+<!-- Row 1: Cave-In -->
+<tr class="hover:bg-surface-container-high/40 transition-colors cursor-pointer bg-surface-container-low/50" data-incident-id="MB-1094" onclick="selectIncident('MB-1094')">
+<td class="py-space-md px-space-md text-center" onclick="event.stopPropagation()">
+<input class="incident-chk w-4 h-4 rounded bg-surface-container-high checked:bg-primary accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-xl overflow-hidden bg-surface-container-highest shrink-0">
+<img class="w-full h-full object-cover" data-alt="A large dangerous pothole and asphalt cave-in on an urban city asphalt road with yellow caution perimeter markers captured in daylight with high resolution details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNNJovfAifBL1UIrp746QQ42NQGUfS_TJx8qqW6o_FTfHNHnyA7Azich3A7jmq2xpaSBRCNuqwezX7gpVuN0hQO7sQqlWA2XDTv9kmaQDtEk_t43OyeqHIA_Crl-90yuJZVLOhG5nwRK7rAKjiCwl5yFHD5tB37O2cMsD-Yp6WlYNoCTnslvzZTdwuGyf-tg5rzI2ZAtyKnNKy4TxG_4PmMEK5NFLnFt76DSRro03YZyuPnJ1Wty4n"/>
+<span class="absolute bottom-0 right-0 bg-primary-container text-on-primary-container text-[9px] px-1 font-bold">HQ</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-sm text-code-sm font-semibold text-primary">#MB-1094</span>
+<span class="font-label-md text-label-md text-on-surface truncate font-medium">Deep road cave-in on Market St</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">pin_drop</span> Ward 2, Central Crossing
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">smart_toy</span> Pothole / Subsidence
+                      </span>
+<div class="flex items-center gap-1.5">
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 96%;"></div>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">96%</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container/20 text-error font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span> Critical
+                    </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm font-medium">
+                      Dispatched
+                    </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Alpha Heavy Ops</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Crew #04 (3 techs)</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1 text-error font-code-sm text-code-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>1h 14m left</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-xl hover:bg-surface-bright text-on-surface-variant hover:text-secondary transition-colors" onclick="selectIncident('MB-1094')" title="Open Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Downed Power Line -->
+<tr class="hover:bg-surface-container-high/40 transition-colors cursor-pointer bg-surface-container/30" data-incident-id="MB-1095" onclick="selectIncident('MB-1095')">
+<td class="py-space-md px-space-md text-center" onclick="event.stopPropagation()">
+<input class="incident-chk w-4 h-4 rounded bg-surface-container-high checked:bg-primary accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-xl overflow-hidden bg-surface-container-highest shrink-0">
+<img class="w-full h-full object-cover" data-alt="High voltage severed electrical line hanging over city suburban residential pavement sidewalk with safety warning barriers at twilight dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA67bImnF8L8VlTRkwsHlLwRYUKnckXyVSzoU4qd4uzHJDiDo-raIa61OdjVLm7EA9CTDN7ua2oxKRdiHVQneLBmOy0hT02wXMYpZHlUN7BznOIv8Ks-npRD8d_9fgM5g9r7pcUVmkKdQfntb5z0kw72LgG22hWxXuw145cBqWVUxAzqpb6lhjCKQgA81PwpFiWujRFuzjF0XSslmqQvLuatS381kJCqTX0a9EQW05pa4DhM9ALIvuU"/>
+<span class="absolute bottom-0 right-0 bg-error text-on-error text-[9px] px-1 font-bold">HAZ</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-sm text-code-sm font-semibold text-primary">#MB-1095</span>
+<span class="font-label-md text-label-md text-on-surface truncate font-medium">Downed power line post-storm</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">pin_drop</span> Ward 7, Elmwood Park
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">bolt</span> Electrical High-Volt
+                      </span>
+<div class="flex items-center gap-1.5">
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 99%;"></div>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">99%</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container/20 text-error font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Critical
+                    </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-medium">
+                      En Route
+                    </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Grid Squad Delta</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Electric Team #12</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1 text-error font-code-sm text-code-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span>32m left</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-xl hover:bg-surface-bright text-on-surface-variant hover:text-secondary transition-colors" onclick="selectIncident('MB-1095')" title="Open Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Clogged Drainage with Warning -->
+<tr class="hover:bg-surface-container-high/40 transition-colors cursor-pointer bg-surface-container-low/50" data-incident-id="MB-1096" onclick="selectIncident('MB-1096')">
+<td class="py-space-md px-space-md text-center" onclick="event.stopPropagation()">
+<input class="incident-chk w-4 h-4 rounded bg-surface-container-high checked:bg-primary accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-xl overflow-hidden bg-surface-container-highest shrink-0">
+<img class="w-full h-full object-cover" data-alt="Overflowing curbside storm drain with urban debris, organic leaves, and pooled street water causing mild flooding near pedestrian walkway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBagf7cHwKk88rpkYdC4DH-XUTsCey1iW7iJMt4Pq1VUxwGh30SaUa9OsCHJdTilhsBFOpWLshG_L7__dF7Da0QmJC9V1hO8Qsf0xBI22v6S2xUikhFdBRd837ey20FPq4HeEMY_je_voVQOawAHBI5e5DqQqo5UhiZspLorpdeL7wSosxerHRNSme9RprHB1YnGrDU2h0BLeY6M9nbA7c7Fvrj-qxI56aoD8OnuRCSivUdJyAMUpcO"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-sm text-code-sm font-semibold text-primary">#MB-1096</span>
+<span class="font-label-md text-label-md text-on-surface truncate font-medium">Clogged gutter drain & standing water</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">pin_drop</span> Ward 5, Bayview Ave
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">water_damage</span> Storm Drain
+                      </span>
+<div class="flex items-center gap-1.5">
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 81%;"></div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-semibold">81%</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary text-[10px] font-bold" title="Confidence < 85% requires validation">Verify</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold">
+                      Medium
+                    </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-medium">
+                      Under Review
+                    </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant italic">Unassigned</span>
+<span class="font-code-sm text-code-sm text-primary cursor-pointer hover:underline" onclick="event.stopPropagation(); selectIncident('MB-1096');">+ Assign Now</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1 text-on-surface-variant font-code-sm text-code-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+<span>18h 40m</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-xl hover:bg-surface-bright text-on-surface-variant hover:text-secondary transition-colors" onclick="selectIncident('MB-1096')" title="Open Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom Table Pagination / Counter Footer -->
+<div class="px-space-md py-space-sm bg-surface-container-high/40 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Displaying 3 of 43 priority cases in queue</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-highest text-on-surface hover:bg-surface-bright" type="button">Prev</button>
+<span class="px-space-xs font-code-sm text-code-sm">Page 1 / 4</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-highest text-on-surface hover:bg-surface-bright" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Quick Inspector Dossier Drawer (4 Cols) -->
+<div class="xl:col-span-4 bg-surface-container/70 backdrop-blur-2xl rounded-2xl p-space-lg shadow-2xl flex flex-col gap-space-md sticky top-20" id="inspectorDrawer">
+<!-- Dossier Header -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="dossierId">#MB-1094</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm font-semibold" id="dossierStatus">Dispatched</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface mt-0.5 font-medium" id="dossierTitle">Deep road cave-in on Market St</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1" id="dossierLocation">
+<span class="material-symbols-outlined text-[14px] text-secondary">pin_drop</span> Ward 2, Central Crossing
+            </span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+</div>
+<!-- High-Res Visual Inspection Viewport -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container-lowest group shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A detailed high resolution photograph of asphalt roadway subsidence showing deep road structural damage and cracked tarmac under direct municipal daylight inspection" id="dossierImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIqQLGoBkSi3NmGpbE-AoMkUJw32PGn4MfzAVgvkHbqTTjns8wci1zF2k_SegyVLgGq7FxshGRlvNSWU7L_d53YGvIT8l_7IkWvx4DnCtg5wRN_RHRRi5CuvirVxR7QMqE4-NzJN_kS0TZtnmh3UR55QQodqOFSgRID-fCgfnu9d3ykKXf12Tq7WWasGApeGg2OIeucQBfnjW1SQ680fTASncKXXwB4wKfetItYnXO9oK3rRzZRtdr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent flex flex-col justify-end p-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded">
+                Geotag: 37.7749° N, 122.4194° W
+              </span>
+<span class="font-code-sm text-code-sm text-tertiary flex items-center gap-1 bg-surface-container-lowest/80 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> EXIF Verified
+              </span>
+</div>
+</div>
+</div>
+<!-- CNN AI Prediction Breakdown -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">psychology</span> CNN Model Inference
+            </span>
+<span class="font-code-sm text-code-sm text-secondary font-bold" id="dossierAiConfidence">96.4% Certainty</span>
+</div>
+<!-- Multi-class Prediction Weights -->
+<div class="flex flex-col gap-1.5">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface" id="dossierAiClass">Primary: Road Subsidence / Pothole</span>
+<span class="text-secondary font-code-sm">96%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 96%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface-variant">Secondary: Storm Drain Overflow</span>
+<span class="text-on-surface-variant font-code-sm">3.4%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-surface-bright" style="width: 3.4%;"></div>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full py-2 rounded-xl bg-tertiary-container/30 hover:bg-tertiary-container/50 text-tertiary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" onclick="confirmAiTag()" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Confirm AI Classification</span>
+</button>
+</div>
+<!-- Fast Operational Dispatch Actions -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Assign Municipal Crew</label>
+<div class="relative">
+<select class="w-full bg-surface-container-high text-on-surface font-body-sm text-body-sm px-space-md py-2.5 rounded-xl appearance-none focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="dossierCrewSelect">
+<option selected="" value="crew-alpha">Alpha Heavy Ops (3 Active Technicians)</option>
+<option value="crew-delta">Grid Squad Delta (Power & Utilities)</option>
+<option value="crew-rapid">Sanitation Quick Response 09</option>
+<option value="crew-contract">External Paving Contractor (Standby)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Evidence Upload Zone for Before/After Auditing -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Resolution Evidence Log</label>
+<span class="font-code-sm text-code-sm text-on-surface-variant">0 of 2 Uploaded</span>
+</div>
+<div class="border-2 border-dashed border-outline-variant/40 hover:border-primary/50 transition-colors rounded-xl p-space-md flex flex-col items-center justify-center gap-1 bg-surface-container-low/40 cursor-pointer group text-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add_a_photo</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Drop completion work photo</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">JPG, PNG or HEIC with municipal timestamp</span>
+</div>
+</div>
+<!-- Command Action Button Bar -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="py-2.5 px-space-sm rounded-xl bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="alert('Priority elevated and notification pushed to Ward Supervisor')" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span>Flag Lead</span>
+</button>
+<button class="py-2.5 px-space-sm rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-fixed-dim transition-colors shadow-lg flex items-center justify-center gap-1" onclick="resolveIncidentAction()" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Finalize Order</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // State store for sample triage dossiers
+  const dossierStore = {
+    'MB-1094': {
+      id: '#MB-1094',
+      status: 'Dispatched',
+      statusClass: 'bg-secondary-container/20 text-secondary',
+      title: 'Deep road cave-in on Market St',
+      location: 'Ward 2, Central Crossing',
+      aiCategory: 'Primary: Road Subsidence / Pothole',
+      confidence: '96.4% Certainty',
+      crew: 'crew-alpha',
+      imgAlt: 'A detailed high resolution photograph of asphalt roadway subsidence showing deep road structural damage and cracked tarmac under direct municipal daylight inspection'
+    },
+    'MB-1095': {
+      id: '#MB-1095',
+      status: 'En Route',
+      statusClass: 'bg-primary-container/20 text-primary',
+      title: 'Downed power line post-storm',
+      location: 'Ward 7, Elmwood Park',
+      aiCategory: 'Primary: High-Voltage Electrical Hazard',
+      confidence: '99.1% Certainty',
+      crew: 'crew-delta',
+      imgAlt: 'High voltage severed electrical line hanging over city suburban residential pavement sidewalk with safety warning barriers at twilight dusk'
+    },
+    'MB-1096': {
+      id: '#MB-1096',
+      status: 'Under Review',
+      statusClass: 'bg-surface-container-highest text-on-surface-variant',
+      title: 'Clogged gutter drain & standing water',
+      location: 'Ward 5, Bayview Ave',
+      aiCategory: 'Primary: Storm Drain Overflow (Low Confidence)',
+      confidence: '81.2% Certainty',
+      crew: 'crew-rapid',
+      imgAlt: 'Overflowing curbside storm drain with urban debris, organic leaves, and pooled street water causing mild flooding near pedestrian walkway'
+    }
+  };
+
+  // Switch dossier in right inspector panel
+  function selectIncident(id) {
+    const data = dossierStore[id];
+    if (!data) return;
+
+    // Highlight row
+    document.querySelectorAll('#incidentTableBody tr').forEach(row => {
+      if (row.getAttribute('data-incident-id') === id) {
+        row.classList.add('bg-surface-container-high/60');
+      } else {
+        row.classList.remove('bg-surface-container-high/60');
+      }
+    });
+
+    // Populate Right Drawer
+    document.getElementById('dossierId').innerText = data.id;
+    const statusPill = document.getElementById('dossierStatus');
+    statusPill.innerText = data.status;
+    statusPill.className = `px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold ${data.statusClass}`;
+    document.getElementById('dossierTitle').innerText = data.title;
+    document.getElementById('dossierLocation').innerHTML = `<span class="material-symbols-outlined text-[14px] text-secondary">pin_drop</span> ${data.location}`;
+    document.getElementById('dossierAiClass').innerText = data.aiCategory;
+    document.getElementById('dossierAiConfidence').innerText = data.confidence;
+    document.getElementById('dossierCrewSelect').value = data.crew;
+  }
+
+  // Micro-interaction: Confirm AI Tag
+  function confirmAiTag() {
+    const id = document.getElementById('dossierId').innerText;
+    alert(`Verified & Locked AI classification metadata for incident ${id}. Synced to municipal telemetry ledger.`);
+  }
+
+  // Micro-interaction: Finalize Order
+  function resolveIncidentAction() {
+    const id = document.getElementById('dossierId').innerText;
+    alert(`Work order for ${id} has been marked complete and routed to citizen verification.`);
+  }
+
+  // Filter input dynamic filtering micro-interaction
+  document.getElementById('filterInput').addEventListener('input', function(e) {
+    const term = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('#incidentTableBody tr');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(term) ? '' : 'none';
+    });
+  });
+
+  // Select all checkbox binding
+  document.getElementById('selectAllCheckbox').addEventListener('change', function(e) {
+    const checked = e.target.checked;
+    document.querySelectorAll('.incident-chk').forEach(chk => {
+      chk.checked = checked;
+    });
+  });
+</script></main></div></body></html>
