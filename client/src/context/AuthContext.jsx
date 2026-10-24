@@ -41,9 +41,11 @@ export function AuthProvider({ children }) {
   /**
    * Log in user using Spring Boot API with offline demo fallback
    */
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080'
+
   async function login(email, password) {
     try {
-      const response = await fetch('http://localhost:8080/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -82,7 +84,7 @@ export function AuthProvider({ children }) {
    */
   async function signup(name, email, password) {
     try {
-      const response = await fetch('http://localhost:8080/api/auth/signup', {
+      const response = await fetch(`${API_URL}/api/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })
@@ -121,7 +123,7 @@ export function AuthProvider({ children }) {
    * Sends the Google ID token credential to the backend for verification.
    */
   async function googleSignIn(credential) {
-    const response = await fetch('http://localhost:8080/api/auth/google', {
+    const response = await fetch(`${API_URL}/api/auth/google`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ credential })
