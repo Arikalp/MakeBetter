@@ -136,9 +136,13 @@ export default function Navbar({
                   style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKPipQ8OWuXk2X59ADZiLAIt5_ktvqQAVQNgOFoamHltBuy4oSPTIX13UhCX6-Jtb2jUjpwBcsW8OaWTvBMoKZbV-Ito4WryVz0BbVS4PRjoHH5KueBZuO5lg1ebq2yoXrh4CaVYxYTDhqfq0WZrmLTNb5dvr6e8bKKRVsmF7fSXmmkY4ThBP_WNjxTDAE7jDPq_R2pARLavrBHD03G9p9TTZdLscdGFxAmeKNyXWgHXexesXchtv"
-                    alt="Citizen Avatar"
+                    src={
+                      currentUser?.picture ||
+                      `https://ui-avatars.com/api/?name=${encodeURIComponent(currentUser?.name || 'U')}&background=7c3aed&color=fff&size=80&bold=true`
+                    }
+                    alt={currentUser?.name || 'Citizen Avatar'}
                     className="mb-avatar-img"
+                    referrerPolicy="no-referrer"
                   />
                 </button>
 
@@ -163,10 +167,23 @@ export default function Navbar({
                     }}
                   >
                     <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '8px' }}>
-                      <p style={{ margin: 0, fontSize: '13.5px', fontWeight: 600, color: 'var(--mb-text-primary)' }}>
-                        {currentUser?.name || 'Citizen'}
-                      </p>
-                      <p style={{ margin: '2px 0 0', fontSize: '11.5px', color: 'var(--mb-text-dim)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                        <p style={{ margin: 0, fontSize: '13.5px', fontWeight: 600, color: 'var(--mb-text-primary)' }}>
+                          {currentUser?.name || 'Citizen'}
+                        </p>
+                        {currentUser?.provider === 'google' && (
+                          <span style={{
+                            fontSize: '10px',
+                            padding: '1px 6px',
+                            borderRadius: '4px',
+                            background: 'rgba(66, 133, 244, 0.2)',
+                            color: '#4285f4',
+                            fontWeight: 700,
+                            letterSpacing: '0.3px'
+                          }}>G</span>
+                        )}
+                      </div>
+                      <p style={{ margin: 0, fontSize: '11.5px', color: 'var(--mb-text-dim)' }}>
                         {currentUser?.email || ''}
                       </p>
                     </div>

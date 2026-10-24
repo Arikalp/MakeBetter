@@ -63,7 +63,9 @@ public class AuthService {
                 savedUser.getId(),
                 savedUser.getName(),
                 savedUser.getEmail(),
-                savedUser.getRole()
+                savedUser.getRole(),
+                savedUser.getPicture(),
+                savedUser.getProvider()
         );
 
         return AuthResponse.success("Account registered successfully", token, userDto);
@@ -99,7 +101,9 @@ public class AuthService {
                 user.getId(),
                 user.getName(),
                 user.getEmail(),
-                user.getRole()
+                user.getRole(),
+                user.getPicture(),
+                user.getProvider()
         );
 
         return AuthResponse.success("Authentication successful", token, userDto);

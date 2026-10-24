@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { GoogleLogin } from '@react-oauth/google'
 import { FaCreativeCommonsSamplingPlus } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
 import './AuthModal.css'
@@ -6,7 +7,7 @@ import './AuthModal.css'
 /**
  * Authentication Modal Component
  * Renders both Login and Signup forms with dark glassmorphic styling,
- * validation feedback, and seamless integration with the AuthContext.
+ * validation feedback, Google OAuth button, and seamless integration with AuthContext.
  */
 export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAuthSuccess }) {
   const [mode, setMode] = useState(initialMode) // 'login' | 'signup'
@@ -17,8 +18,9 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAu
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
 
-  const { login, signup } = useAuth()
+  const { login, signup, googleSignIn } = useAuth()
 
   if (!isOpen) return null
 
@@ -28,7 +30,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAu
     setError('')
   }
 
-  // Handle Form Submission
+  // Handle Email/Password Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
@@ -74,6 +76,29 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAu
       setIsLoading(false)
       setError(err.message || 'Authentication failed. Please check your credentials.')
     }
+  }
+
+  // Handle Google OAuth success (called with Google credential token)
+  const handleGoogleSuccess = async (credentialResponse) => {
+    setError('')
+    setGoogleLoading(true)
+    try {
+      const result = await googleSignIn(credentialResponse.credential)
+      setGoogleLoading(false)
+      if (result && result.success) {
+        onClose()
+        if (onAuthSuccess) {
+          onAuthSuccess(result.user)
+        }
+      }
+    } catch (err) {
+      setGoogleLoading(false)
+      setError(err.message || 'Google sign-in failed. Please try again.')
+    }
+  }
+
+  const handleGoogleError = () => {
+    setError('Google sign-in was cancelled or failed. Please try again.')
   }
 
   return (
@@ -128,6 +153,38 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAu
             <span>{error}</span>
           </div>
         )}
+
+        {/* Google Sign-In Button */}
+        <div className="auth-google-section">
+          {googleLoading ? (
+            <div className="auth-google-loading">
+              <span className="material-symbols-outlined" style={{ fontSize: '18px', animation: 'spin 1s linear infinite', color: 'var(--mb-primary)' }}>
+                autorenew
+              </span>
+              <span>Signing in with Google...</span>
+            </div>
+          ) : (
+            <div className="auth-google-btn-wrapper">
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={handleGoogleError}
+                theme="filled_black"
+                shape="rectangular"
+                size="large"
+                width="100%"
+                text={mode === 'signup' ? 'signup_with' : 'signin_with'}
+                logo_alignment="center"
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Divider */}
+        <div className="auth-divider">
+          <span className="auth-divider-line" />
+          <span className="auth-divider-text">or continue with email</span>
+          <span className="auth-divider-line" />
+        </div>
 
         {/* Form Body */}
         <form className="auth-form" onSubmit={handleSubmit} noValidate>

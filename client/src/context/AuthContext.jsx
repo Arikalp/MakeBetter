@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 
 /**
  * Authentication Context
- * Manages user authentication state, tokens, and login/signup/logout actions.
+ * Manages user authentication state, tokens, and login/signup/logout/googleSignIn actions.
  * Adheres to NOTE.md: modular, readable, and simple to understand.
  */
 const AuthContext = createContext(null)
@@ -65,7 +65,9 @@ export function AuthProvider({ children }) {
           id: 'mb_local_' + Date.now(),
           name: email.split('@')[0],
           email: email,
-          role: 'CITIZEN'
+          role: 'CITIZEN',
+          picture: null,
+          provider: 'local'
         }
         setCurrentUser(fallbackUser)
         setAuthToken('mb_local_token_' + Date.now())
@@ -102,7 +104,9 @@ export function AuthProvider({ children }) {
           id: 'mb_local_' + Date.now(),
           name: name,
           email: email,
-          role: 'CITIZEN'
+          role: 'CITIZEN',
+          picture: null,
+          provider: 'local'
         }
         setCurrentUser(fallbackUser)
         setAuthToken('mb_local_token_' + Date.now())
@@ -110,6 +114,28 @@ export function AuthProvider({ children }) {
       }
       throw err
     }
+  }
+
+  /**
+   * Google OAuth Sign-In
+   * Sends the Google ID token credential to the backend for verification.
+   */
+  async function googleSignIn(credential) {
+    const response = await fetch('http://localhost:8080/api/auth/google', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ credential })
+    })
+
+    const data = await response.json()
+
+    if (!response.ok || !data.success) {
+      throw new Error(data.message || 'Google sign-in failed')
+    }
+
+    setCurrentUser(data.user)
+    setAuthToken(data.token)
+    return { success: true, user: data.user }
   }
 
   /**
@@ -128,6 +154,7 @@ export function AuthProvider({ children }) {
     isAuthenticated: Boolean(currentUser),
     login,
     signup,
+    googleSignIn,
     logout
   }
 

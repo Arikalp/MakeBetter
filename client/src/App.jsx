@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 import { AuthProvider } from './context/AuthContext'
 import LandingPage from './components/landing/LandingPage'
 import ReportIssuePage from './components/report/ReportIssuePage'
@@ -80,12 +81,14 @@ function MainApp() {
 }
 
 /**
- * Root Application Component wrapped in AuthProvider
+ * Root Application Component wrapped in GoogleOAuthProvider and AuthProvider
  */
 export default function App() {
   return (
-    <AuthProvider>
-      <MainApp />
-    </AuthProvider>
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+      <AuthProvider>
+        <MainApp />
+      </AuthProvider>
+    </GoogleOAuthProvider>
   )
 }
